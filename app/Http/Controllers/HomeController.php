@@ -10,7 +10,7 @@ class HomeController extends Controller
     public function index() {
         $car = Car::find(1);
 
-        dd($car->features);
+        dd($car->images);
         return view('home.index')->with('name', 'Damjan')->with('surename', 'Stamenov');
     }
 }

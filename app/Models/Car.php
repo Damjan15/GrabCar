@@ -4,6 +4,7 @@ namespace App\Models;
 
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -37,5 +38,10 @@ class Car extends Model
     public function primaryImage(): HasOne
     {
         return $this->hasOne(CarImage::class)->ofMany('position', 'min');
+    }
+
+    public function images(): HasMany
+    {
+        return $this->hasMany(CarImage::class,);
     }
 }
